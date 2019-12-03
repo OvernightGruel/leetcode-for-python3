@@ -29,12 +29,24 @@
 
 
 class Solution:
+    # def is_valid(self, s):
+    #     while '{}' in s or '()' in s or '[]' in s:
+    #         s = s.replace('{}', '')
+    #         s = s.replace('[]', '')
+    #         s = s.replace('()', '')
+    #     return s == ''
+
     def is_valid(self, s):
-        while '{}' in s or '()' in s or '[]' in s:
-            s = s.replace('{}', '')
-            s = s.replace('[]', '')
-            s = s.replace('()', '')
-        return s == ''
+        stack = []
+        mapping = {')': '(', '}': '{', ']': '['}
+        for i in s:
+            if i not in mapping:
+                stack.append(i)
+            elif mapping[i] != stack.pop() or not stack:
+                return False
+        return not stack
+
+
 
 
 if __name__ == '__main__':
