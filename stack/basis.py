@@ -21,6 +21,9 @@ class Stack:
     def is_empty(self):
         return self.size() == 0
 
+    def __str__(self):
+        return str(self.stack)
+
 
 # 栈实现队列
 class QueueByStack:

@@ -1,10 +1,9 @@
 # 冒泡排序
 def bubble_sort(l):
-    for j in range(len(l)):
-        for i in range(len(l) - 1 - j):
-            if l[i] > l[i + 1]:
-                l[i + 1], l[i] = l[i], l[i + 1]
-
+    for i in range(len(l)):
+        for j in range(len(l) - 1 - i):
+            if l[j] > l[j + 1]:
+                l[j + 1], l[j] = l[j], l[j + 1]
     return l
 
 
@@ -14,6 +13,7 @@ def insert_sort(l):
         for j in range(i, 0, -1):
             if l[j] < l[j - 1]:
                 l[j], l[j - 1] = l[j - 1], l[j]
+    return l
 
 
 # 选择排序
@@ -24,6 +24,7 @@ def select_sort(l):
             if l[j] < l[min_index]:
                 min_index = j
         l[i], l[min_index] = l[min_index], l[i]
+    return l
 
 
 # 归并排序

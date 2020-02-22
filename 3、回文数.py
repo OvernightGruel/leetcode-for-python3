@@ -38,19 +38,20 @@
 
 
 class Solution:
-    def is_alindrome(self, x):
-        if x < 0:
+    def is_alindrome(self, n):
+        if n < 0:
             return False
-        elif x < 10:
+        elif n < 10:
             return True
         else:
-            reverted_number = 0
-            while x > reverted_number:
-                reverted_number = x // 10 + reverted_number * 10
-                x = x // 10
-            return x == reverted_number or x == reverted_number // 10
+            res = 0
+            x = n
+            while x != 0:
+                x, y = divmod(x, 10)
+                res = res * 10 + y
+        return res == n
 
 
 if __name__ == '__main__':
     s = Solution()
-    s.is_alindrome(121)
+    print(s.is_alindrome(1223220))

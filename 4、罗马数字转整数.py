@@ -80,6 +80,6 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    s_int = s.roman_to_Int('IV')
+    s_int = s.roman_to_Int('MCMXCIV')
     print(s_int)
 

@@ -18,27 +18,14 @@
 
 
 class Solution:
-    def reverse(self, x):
-        x_str = str(x)
-        x_list = list(x_str)
-        a = None
-        if x < 0:
-            a = x_list.pop(0)
-        x_reversed = reversed(x_list)
-        x_str = ''.join(x_reversed)
-        x_str = x_str.lstrip('0')
-        if not x_str:
-            return 0
-        x_int = int(x_str)
-        if x_int < 2 ** 31:
-            x_int = 0 - x_int if a else x_int
-            return x_int
-        elif x_int == 2 ** 31 and a:
-            return - 2 ** 31
-        else:
-            return 0
+    def reverse(self, n):
+        res, x = 0, abs(n)
+        while x != 0:
+            x, y = divmod(x, 10)
+            res = res * 10 + y
+        return res if n >= 0 else -res
 
 
 if __name__ == '__main__':
     s = Solution()
-    s.reverse(123000)
+    print(s.reverse(-123))

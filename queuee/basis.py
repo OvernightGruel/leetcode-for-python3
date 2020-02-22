@@ -25,6 +25,9 @@ class Queue:
             val = self.dequeue()
             self.enqueue(val)
 
+    def __str__(self):
+        return str(self.queue)
+
 
 # 队列实现栈
 class StackByQueue:
